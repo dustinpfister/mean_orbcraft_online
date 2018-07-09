@@ -1,6 +1,6 @@
 {
   "name": "mean_orbcraft_online",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A mean stack applaction and game prototype",
   "main": "app.js",
   "scripts": {

@@ -5,7 +5,7 @@ require('../lib/connect')(require('../connect.json')).then(function (mongoose) {
     Orb = require('../models/orb'),
 
     // create the orb
-    orb = new Orb();
+    orb = new Orb({owner: process.argv[2] || null});
 
     // save the day
     orb.save(function (e, orb) {
@@ -13,21 +13,21 @@ require('../lib/connect')(require('../connect.json')).then(function (mongoose) {
         if (e) {
 
             console.log('create: error');
-            console.log(e);
-            db.close();
+            console.log(e.message);
 
         } else {
 
             console.log('create: saved new orb');
             console.log(orb);
-            db.close();
 
         }
+
+        db.close();
 
     });
 
 }).catch (function (e) {
 
-    console.log(e);
+    console.log(e.message);
 
 });
