@@ -1,14 +1,14 @@
-// create an Orb
+// create a user
 require('../lib/connect')(require('../connect.json')).then(function (mongoose) {
 
     let db = mongoose.connection,
-    Orb = require('../models/orb'),
+    User = require('../models/user'),
 
-    // create the orb
-    orb = new Orb({owner: process.argv[2] || null});
+    // create the user
+    usr = new User({name: process.argv[2] || null});
 
-    // save the orb
-    orb.save(function (e, orb) {
+    // save the user
+    usr.save(function (e, usr) {
 
         if (e) {
 
@@ -17,8 +17,8 @@ require('../lib/connect')(require('../connect.json')).then(function (mongoose) {
 
         } else {
 
-            console.log('create: saved new orb');
-            console.log(orb);
+            console.log('create: saved new user');
+            console.log(usr);
 
         }
 
