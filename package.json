@@ -1,6 +1,6 @@
 {
   "name": "mean_orbcraft_online",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A mean stack applaction and game prototype",
   "main": "app.js",
   "scripts": {
@@ -16,6 +16,9 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mongoose": "^5.2.2"
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
