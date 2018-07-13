@@ -71,7 +71,7 @@ UserSchema.pre('save', function (next) {
 
     })
 
-})
+});
 
 // Static Methods:
 
