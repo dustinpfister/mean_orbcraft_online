@@ -13,7 +13,8 @@ secret = 'eeeek',
 user = {
     username: 'foo',
     id: 0,
-    password: '123'
+    password: '123',
+	online: true
 },
 
 app = express();
@@ -88,7 +89,7 @@ app.get('/login',
     function (req, res) {
     res.render('index', {
         layout: 'login',
-        user: req.user
+        user: req.user || {online:false}
     });
 });
 

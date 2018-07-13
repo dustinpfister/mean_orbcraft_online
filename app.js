@@ -13,12 +13,6 @@ app.set('view engine', 'ejs');
 // static paths
 app.use('/js', express.static('./public/js'));
 
-app.get('/', (req, res) => {
-
-    res.render('index',{layout:'home'});
-
-});
-
 app.use(require('./middleware/login')({
 	
 	views: app.get('views'),
@@ -26,6 +20,14 @@ app.use(require('./middleware/login')({
 	
 	
 }));
+
+app.get('/', (req, res) => {
+
+    res.render('index',{layout:'home', user: req.user || {online:false} });
+
+});
+
+
 
 app.listen(app.get('port'), () => {
 
